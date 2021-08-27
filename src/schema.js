@@ -1,8 +1,9 @@
-// node-graphql/src/schema.js
+//* node-graphql/src/schema.js
 
 const { gql } = require('apollo-server')
 
 const typeDefs = gql`
+
   type Student {
     id: ID!
     email: String!
@@ -12,12 +13,13 @@ const typeDefs = gql`
   }
 
   type Query {
-    enrollment: [Student!]!
+    enrollment: [Student!]
+    students: [Student!]!
     student(id: ID!): Student
   }
 
   type Mutation {
-    registerStudent(email: String!, fullName: String!): Student!
+    registerStudent(email: String!, fullName: String!, dept: String): Student!
     enroll(id: ID!): Student
   }
 `
